@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--edge browser H5 compatible settings-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--360 browser H5 compatible settings-->
+    <meta name="renderer" content="webkit"/>
+    <title>Computer Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import core file-->
+    <script src="../bootstrap3/js/holder.js"></script>
+    <link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+    <script src="../bootstrap3/js/bootstrap.js"></script>
+    <!-- font icon -->
+    <link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/top.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/orderConfirm.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/cart.css"/>
+
+</head>
+<body>
+<!--head-->
+<header class="header">
+    <!--Computer store logo-->
+    <div class="row">
+        <div class="col-md-3">
+            <a href="index.html">
+                <img src="../images/index/stumalllogo.png" width="35%" height="35%"/>
+            </a>
+        </div>
+        <!--Shortcut Options-->
+        <div class="col-md-9 top-item">
+            <ul class="list-inline pull-right">
+                <!--<li><a href="favorites.html"><span class="fa fa-heart"></span> Favorites</a></li>
+                <li class="li-split">|</li>-->
+                <li><a href="orders.html"><span class="fa fa-file-text"></span> Orders</a></li>
+                <li class="li-split">|
+                <li><a href="cart.html"><span class="fa fa-cart-plus"></span> Cart</a></li>
+                <li class="li-split">|</li>
+                <li>
+                    <!--List button: Manage-->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                            <span id="top-dropdown-btn"><span class="fa fa-gears"></span> Manage <span class="caret"></span></span>
+                        </button>
+                        <ul class="dropdown-menu top-dropdown-ul" role="menu">
+                            <li><a href="password.html">Change Password</a></li>
+                            <li><a href="userdata.html">Personal Data</a></li>
+                            <li><a href="upload.html">Upload Avatar</a></li>
+                            <li><a href="address.html">Manage Delivery</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="li-split">|</li>
+                <li><a href="login.html"><span class="fa fa-user"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--Navigation -->
+<!--Split navigation and top-->
+<div class="row top-nav">
+    <div class="col-md-6">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="#"></a>
+            </li>
+            <li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+            <li><a href="buyerAssistance.html">Buyer Assistance</a></li>
+            <li><a href="contactUs.html">Contact US</a></li>
+            <li><a href="merchantRegistration.html">Merchant Registration</a></li>
+            <li><a href="ourBrandStory.html">Brand Story</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <form action="search.html" class="form-inline pull-right" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+            </div>
+            <button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+        </form>
+    </div>
+</div>
+<!--end of head-->
+<!--End of navigation-->
+
+
+<div class="container">
+    <div class="col-md-offset-1 col-md-10">
+        <div class="col-md-4">
+            <div class="col-md-12 order-bar-active">
+                1. Confirm Order Information
+                <span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="col-md-12 order-bar-undo">
+                2. Online Payment
+                <span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="col-md-12 order-bar-undo">
+                3. Payment Succeed
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <form id="form-create-order" role="form">
+                <div class="form-group">
+                    <label for="name">
+                        <p>Select Delivery Address:</p>
+                    </label>
+                    <select name="aid" id="address-list" class="form-control">
+                        <option>Bajie Home No. 6, Row 3, Gaolaozhuang, Fangshan District, Beijing 1380***1234</option>
+                        <option>Bajie Company Room 1001, No. 1 Zhongguancun Middle Road, Haidian District, Beijing 1380***1234</option>
+                        <option>Bajie Dormitory No. 30 Yongfeng Town, Haidian District, Beijing 1380***1234</option>
+                    </select>
+                </div>
+
+                <div class="panel panel-primary">
+
+                    <div class="panel-heading">
+                        <p class="panel-title">Product Information of Order:</p>
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="cart-table" width="100%">
+                            <thead>
+                            <tr>
+                                <th width="15%"></th>
+                                <th width="35%">Commodity</th>
+                                <th width="15%">Unit Price</th>
+                                <th width="15%">Quantity</th>
+                                <th width="20%">Amount</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="cart-list" class="cart-body">
+                            <tr>
+                                <td><img src="../images/portal/12DELLXPS13-silvery/collect.png" class="img-responsive"/></td>
+                                <td>Lenovo Xiaoxin Air13 Pro 13.3-inch 14.8mm ultra-thin laptop</td>
+                                <td>€<span>5298</span></td>
+                                <td>1</td>
+                                <td><span>5298</span></td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+
+                        <div class="total-bar" style="display: flex; align-items: center; justify-content: flex-end;">
+
+                            <span class="pull-right" >
+                                The Selected products
+                                <strong><span id="all-count"> &nbsp;&nbsp;1</span></strong>    Item(s) Total Price
+                            &nbsp;&nbsp;  <strong>€ <span id="all-price">5298 </span> </strong>
+						    </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pay-bar">
+                    <a href="cart.html">Return to Cart</a>
+                    <span class="pull-right">
+                        <input id="btn-create-order" type="button"
+                               value="Online Payment"
+                               class="btn btn-primary btn-lg link-pay"/>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Start of footer-->
+<footer class="footer">
+    <!-- Quality Assurance, Customized Service, etc.-->
+    <div class="text-center rights container">
+        <div class="col-md-offset-2 col-md-2">
+            <span class="fa fa-thumbs-o-up"></span>
+            <p>Quality Assurance</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-address-card-o"></span>
+            <p>Customized Service</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-graduation-cap"></span>
+            <p>Student Exclusive Offer</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-bitcoin"></span>
+            <p>Exclusive Privileges</p>
+        </div>
+    </div>
+
+
+    <!--Contact US, Download App, etc.-->
+    <div class="container beforeBottom">
+        <div class="col-md-3 callus text-center">
+            <ul>
+                <li class="singleline"><a href="./buyerAssistance.html">Buyer Assistance</a></li>
+                <li class="singleline"><a href="./beginnersGuide.html">Beginner's Guide</a></li>
+                <li class="singleline"><a href="./serviceGuarantee.html">&nbsp;&nbsp;Service Guarantee</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./merchantAssistance.html">Merchant Assistance</a></li>
+                <li class="singleline"><a href="./merchantRegistration.html">Merchant Registration</a></li>
+                <li class="singleline"><a href="./faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./ourBrandStory.html">Our Brand Story</a></li>
+                <li class="singleline"><a href="./helpCenter.html">Help Center 24 Hours</a></li>
+                <li class="singleline"><a href="./contactUs.html">Contact Us 24 Hours</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <p class="singleline">PC Store Client</p>
+            <img src="../images/index/ios.png" class="lf">
+            <img src="../images/index/android.png" alt="" class="lf"/>
+        </div>
+    </div>
+
+
+    <!-- Bottom of the page - record number #footer -->
+    <div class="col-md-12 text-center bottom">
+        Copyright © 2022 dnsc.cn All Rights Reserved Beijing ICP No. 08963888-45 Mendy Technology Group
+        Co., Ltd. All rights reserved
+    </div>
+</footer>
+<!--End of footer-->
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        showAddressList();
+        showCartList();
+    });
+
+    function showCartList() {
+        $("#cart-list").empty();
+
+        // cid=6&cid=5&cid=4
+        console.log(location.search.substr(1));
+
+        $.ajax({
+            url: "/carts/list",
+            data: location.search.substr(1),
+            type: "GET",
+            dataType: "JSON",
+            success: function(json) {
+                let list = json.data;
+                console.log("count=" + list.length);
+                let allCount = 0;
+                let allPrice = 0;
+                for (let i = 0; i < list.length; i++) {
+                    console.log(list[i].title);
+                    let tr = '<tr>'
+                        + '<td><img src="..#{image}collect.png" class="img-responsive" /></td>'
+                        + '<td><input type="hidden" name="cids" value="#{cid}"/>#{title}</td>'
+                        + '<td>¥<span>#{realPrice}</span></td>'
+                        + '<td>#{num}</td>'
+                        + '<td>¥<span>#{totalPrice}</span></td>'
+                        + '</tr>';
+
+                    tr = tr.replace(/#{cid}/g, list[i].cid);
+                    tr = tr.replace(/#{image}/g, list[i].image);
+                    tr = tr.replace(/#{title}/g, list[i].title);
+                    tr = tr.replace(/#{realPrice}/g, list[i].realPrice);
+                    tr = tr.replace(/#{num}/g, list[i].num);
+                    tr = tr.replace(/#{totalPrice}/g, list[i].realPrice * list[i].num);
+
+                    $("#cart-list").append(tr);
+
+                    allCount += list[i].num;
+                    allPrice += list[i].realPrice * list[i].num;
+                }
+                $("#all-count").html(allCount);
+                $("#all-price").html(allPrice);
+            }
+        });
+    }
+
+
+
+
+    function showAddressList() {
+        $("#address-list").empty();
+        $.ajax({
+            url: "/addresses",
+            type: "GET",
+            dataType: "JSON",
+            success: function(json) {
+                let list = json.data;
+                console.log("count=" + list.length);
+                for (let i = 0; i < list.length; i++) {
+                    console.log(list[i].name);
+                    let opt = '<option value="#{aid}">#{name} | #{country}' +
+                        '&nbsp; - &nbsp; #{cityorcounty}&nbsp; - &nbsp; #{address} | #{phone}</option>';
+
+                    opt = opt.replace(/#{aid}/g, list[i].aid);
+                    opt = opt.replace("#{name}", list[i].name);
+                    opt = opt.replace("#{country}", list[i].countryName);
+                    opt = opt.replace("#{cityorcounty}", list[i].cityOrCountyName);
+                    opt = opt.replace("#{address}", list[i].address);
+                    opt = opt.replace("#{phone}", list[i].phone);
+
+                    $("#address-list").append(opt);
+                }
+            }
+        });
+    }
+
+
+
+
+    $("#btn-create-order").click(function() {
+        $.ajax({
+            url: "/orders/create",
+            data: $("#form-create-order").serialize(),
+            type: "POST",
+            dataType: "JSON",
+            success: function(json) {
+                if (json.state == 200) {
+                    alert("Order paid successfully! ");
+                    console.log(json.data);
+                    location.href = "paySuccess.html";
+                } else {
+                    alert("Order payment failed!" + json.message);
+                    location.href = "payFail.html";
+                }
+            },
+            error: function(xhr) {
+                alert("Your login information has expired, please log in again! HTTP Response Code: " + xhr.status);
+                location.href = "login.html";
+            }
+        });
+    });
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.cy.store.mapper.OrderMapper">
+
+    <resultMap id="OrderInfoMap" type="com.cy.store.vo.orderVO">
+        <id property="oid" column="oid"/>
+        <result property="uid" column="uid"/>
+        <result property="recvName" column="recv_name"/>
+        <result property="recvPhone" column="recv_phone"/>
+        <result property="recvCountry" column="recv_country"/>
+        <result property="recvCityOrCounty" column="recv_cityOrCounty"/>
+        <result property="recvAddress" column="recv_address"/>
+        <result property="totalPrice" column="total_price"/>
+        <result property="status" column="status"/>
+        <result property="createdUser" column="created_user"/>
+        <result property="createdTime" column="created_time"/>
+
+        <!-- Add field mappings for the store.t_order_item table -->
+        <result property="title" column="title"/>
+        <result property="image" column="image"/>
+        <result property="price" column="price"/>
+        <result property="num" column="num"/>
+    </resultMap>
+
+
+    <!-- Insert order data: Integer insertOrder(Order order) -->
+    <insert id="insertOrder" useGeneratedKeys="true" keyProperty="oid">
+        INSERT INTO store.t_order (uid, recv_name, recv_phone, recv_country, recv_cityOrCounty,
+                                   recv_address, total_price, status, order_time, pay_time, created_user,
+                                   created_time, modified_user, modified_time)
+        VALUES (#{uid}, #{recvName}, #{recvPhone}, #{recvCountry}, #{recvCityOrCounty},
+                #{recvAddress}, #{totalPrice}, #{status}, #{orderTime}, #{payTime}, #{createdUser},
+                #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+
+
+    <!-- Insert order product data: Integer insertOrderItem(OrderItem orderItem) -->
+    <insert id="insertOrderItem" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO store.t_order_item (oid, pid, title, image, price, num, created_user,
+                                        created_time, modified_user, modified_time)
+        VALUES (#{oid}, #{pid}, #{title}, #{image}, #{price}, #{num}, #{createdUser},
+                #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+
+
+    <select id="findOrdersByUid" resultType="java.lang.Integer">
+        SELECT oid
+        FROM store.t_order
+        WHERE uid = #{uid}
+    </select>
+
+
+    <select id="find" resultMap="OrderInfoMap">
+        SELECT *
+        FROM store.t_order
+        WHERE uid = #{uid}
+    </select>
+
+
+    <select id="findOrderItemsByOidAndUid" resultMap="OrderInfoMap">
+        SELECT
+            o.oid,
+            o.uid,
+            o.recv_name,
+            o.recv_phone,
+            o.recv_country,
+            o.recv_cityOrCounty,
+            o.recv_address,
+            o.total_price,
+            o.status,
+            i.pid,
+            i.title,
+            i.image,
+            i.price,
+            i.num,
+            i.created_time,
+            i.created_user
+        FROM
+        store.t_order o
+        JOIN
+        store.t_order_item i ON o.oid = i.oid
+        WHERE o.oid = #{oid} AND o.uid = #{uid}
+
+    </select>
+
+
+
+
+
+    <!-- Update status in store.t_order by oid: Integer updateStatus(@Param("oid") Integer oid, @Param("status") Integer status) -->
+    <update id="updateStatus">
+        UPDATE store.t_order
+        SET status = #{status}
+        WHERE oid = #{oid}
+    </update>
+
+
+</mapper>

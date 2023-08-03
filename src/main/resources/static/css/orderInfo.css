@@ -1,0 +1,15 @@
+/* status bar */
+.state-bar {
+background-color: #f3f3f3;
+border: 2px solid #B9DEF0;
+border-radius: 3px;
+}
+/* unfinished operations */
+.order-flow {
+font-size: 18px;
+color: #aaaaaa;
+}
+/*Completed operation*/
+.order-success {
+color: #2A6496;
+}

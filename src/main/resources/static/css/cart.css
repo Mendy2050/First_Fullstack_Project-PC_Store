@@ -1,0 +1,27 @@
+/*Form text centered*/
+.cart-table {
+text-align: center;
+}
+/* Header text is centered */
+.cart-table th {
+text-align: center;
+}
+/*Quantity numbers are centered*/
+.cart-table input {
+text-align: center;
+}
+/*Add and subtract button width*/
+.num-btn {
+width: 30px;
+}
+/* space between each row */
+.cart-table tbody tr {
+border-top: 1px dashed #cccccc;
+}
+/*Total price bar*/
+.total-bar {
+margin: 20px 0;
+background-color: #f0f7fe;
+padding: 15px;
+border-radius: 5px;
+}

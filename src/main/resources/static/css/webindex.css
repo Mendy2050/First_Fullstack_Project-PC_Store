@@ -1,0 +1,94 @@
+/*rotation layer size*/
+#myCarousel {
+width: 100%;
+}
+/*accordion is the left navigation bar*/
+#accordion {
+min-height: 300px;
+}
+/* Shadow effects on the left and right sides */
+.carousel-control.left {
+background-image: none;
+background-color: #666666;
+width: 40px;
+height: 60px;
+margin: 160px 0 0 20px;
+border-radius: 5px;
+}
+.carousel-control.right {
+background-image: none;
+background-color: #666666;
+width: 40px;
+height: 60px;
+margin: 160px 20px 0 0;
+border-radius: 5px;
+}
+/*Home page level one classification menu ul*/
+.index-menu {
+width: 100%;
+margin-left: 5%;
+padding: 5px 0;
+background-color: #4288c3;
+color: #ffffff;
+border-radius: 5px;
+}
+/*Home page level one category menu item li*/
+.index-menu li {
+line-height: 18px;
+height: 18px;
+text-align: center;
+cursor: pointer;
+}
+/*Homepage secondary classification menu ul*/
+.second-menu {
+background-color: #f5f5f5;
+color: #4288c3;
+}
+/*Home page secondary classification menu item li*/
+.second-menu li {
+cursor: pointer;
+text-align: center;
+}
+/*Home page three-level classification menu ul*/
+.third-menu {
+background-color: #f5f5f5;
+color: #666666;
+}
+/*Home page three-level classification menu item li*/
+.third-menu li {
+cursor: pointer;
+text-align: center;
+}
+/*Set relative position and absolute position to locate category div*/
+#indexMenu {
+position: static;
+}
+#showIndex {
+position: absolute;
+display: none;
+min-width: 130px;
+min-height: 50px;
+background-color: #f5f5f5;
+left: 195px;
+top: 0;
+z-index: 1;
+border: 2px solid #4288c3;
+border-left: none;
+}
+#showSecond {
+position: absolute;
+display: none;
+min-width: 130px;
+min-height: 50px;
+background-color: #f5f5f5;
+left: 323px;
+top: 0;
+z-index: 1;
+border: 2px solid #4288c3;
+border-left: none;
+}
+/* Recommended column format */
+.panel-item>div {
+padding: 2px 0;
+border-bottom: 1px solid #f5f5f5;
+}

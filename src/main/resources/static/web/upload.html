@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--edge browser H5 compatible settings-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--360 browser H5 compatible settings-->
+		<meta name="renderer" content="webkit"/>
+		<title>Computer Store</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--Import core file-->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<script src="../bootstrap3/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 字体图标 -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+	</head>
+
+	<body>
+	<!--head-->
+	<header class="header">
+		<!--Computer store logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" width="35%" height="35%"/>
+					</a>
+				</div>
+				<!--Shortcut Options-->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="favorites.html"><span class="fa fa-heart"></span> Favorites</a></li>
+						<li class="li-split">|</li>
+						<li><a href="orders.html"><span class="fa fa-file-text"></span> Orders</a></li>
+						<li class="li-split">|</li>
+						<li><a href="cart.html"><span class="fa fa-cart-plus"></span> Cart</a></li>
+						<li class="li-split">|</li>
+						<li>
+							<!--List button: Manage-->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Manage <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change Password</a></li>
+									<li><a href="userdata.html">Personal Data</a></li>
+									<li><a href="upload.html">Upload Avatar</a></li>
+									<li><a href="address.html">Manage Delivery</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span> Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+	<!--Navigation -->
+	<!--Split navigation and top-->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+					<li><a href="#">SecKill</a></li>
+					<li><a href="#">Coupons</a></li>
+					<li><a href="#">Computer VIP</a></li>
+					<li><a href="#">Takeout</a></li>
+					<li><a href="#">Supermarket</a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+	<!--end of head-->
+	<!--End of navigation-->
+		<div class="container">
+			<div class="col-md-2">
+				<!--Left navigation starts-->
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!--Main option: My Orders-->
+							<p class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">My Order</a>
+							</p>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div><a href="orders.html">All Orders</a></div>
+								<div><a href="orders.html">Payment Pending</a></div>
+								<div><a href="orders.html">Pending Delivery</a></div>
+								<div><a href="orders.html">Pending Review</a></div>
+								<div><a href="orders.html">Return and Refund</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!--Main option: data modification-->
+							<p class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Data Modification</a>
+							</p>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div><a href="password.html">Change Password</a></div>
+								<div><a href="userdata.html">Profile</a></div>
+								<div><a href="upload.html"><b>Upload Avatar</b></a></div>
+								<div><a href="address.html">Receipt Management</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End of left navigation-->
+			</div>
+			<div class="col-md-10	">
+				<div class="panel panel-default">
+					<ul class="nav nav-tabs">
+						<li><a href="password.html">Change Password</a></li>
+						<li><a href="userdata.html">Profile</a></li>
+						<li class="active"><a href="#">Upload Your Avatar</a></li>
+						<li><a href="address.html">Receipt Management</a></li>
+					</ul>
+					<div class="panel-body">
+						<!--Modify data form start-->
+						<form id="form-change-avatar" class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="col-md-2 control-label">Choose Avatar: </label>
+								<div class="col-md-5">
+									<img id="img-avatar" src="" class="img-responsive" />
+								</div>
+								<div class="clearfix"></div>
+								<div class="col-md-offset-2 col-md-4">
+									<input type="file" name="file">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<input id="btn-change-avatar" type="button" class="btn btn-primary" value="Upload" />
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<!--Start of footer-->
+	<footer class="footer">
+		<!-- Quality Assurance, Customized Service, etc.-->
+		<div class="text-center rights container">
+			<div class="col-md-offset-2 col-md-2">
+				<span class="fa fa-thumbs-o-up"></span>
+				<p>Quality Assurance</p>
+			</div>
+			<div class="col-md-2">
+				<span class="fa fa-address-card-o"></span>
+				<p>Customized Service</p>
+			</div>
+			<div class="col-md-2">
+				<span class="fa fa-graduation-cap"></span>
+				<p>Student Exclusive Offer</p>
+			</div>
+			<div class="col-md-2">
+				<span class="fa fa-bitcoin"></span>
+				<p>Exclusive Privileges</p>
+			</div>
+		</div>
+
+
+		<!--Contact US, Download App, etc.-->
+		<div class="container beforeBottom">
+			<div class="col-md-3 callus text-center">
+				<ul>
+					<li class="singleline"><a href="./buyerAssistance.html" >Buyer Assistance</a></li>
+					<li class="singleline"><a href="./beginnersGuide.html" >Beginner's Guide</a></li>
+					<li class="singleline"><a href="./serviceGuarantee.html">&nbsp;&nbsp;Service Guarantee</a></li>
+
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<ul>
+					<li class="singleline"><a href="./merchantAssistance.html">Merchant Assistance</a></li>
+					<li class="singleline"><a href="./merchantRegistration.html">Merchant Registration</a></li>
+					<li class="singleline"><a href="./faq.html" >FAQ</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<ul>
+					<li class="singleline"><a href="./ourBrandStory.html" >Our Brand Story</a></li>
+					<li class="singleline"><a href="./helpCenter.html" >Help Center 24 Hours</a></li>
+					<li class="singleline"><a href="./contactUs.html" >Contact Us 24 Hours</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<p class="singleline">PC Store Client</p>
+				<img src="../images/index/ios.png" class="lf">
+				<img src="../images/index/android.png" alt="" class="lf"/>
+			</div>
+		</div>
+
+
+
+		<!-- Bottom of the page - record number #footer -->
+		<div class="col-md-12 text-center bottom">
+			Copyright © 2022 dnsc.cn All Rights Reserved Beijing ICP No. 08963888-45 Mendy Technology Group
+			Co., Ltd.  All rights reserved
+		</div>
+	</footer>
+	<!--End of footer-->
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				console.log("cookie's 'avatar=" + $.cookie("avatar"));
+				// $("#img-avatar").attr("src", $.cookie("avatar"));
+
+				var avatar = $.cookie("avatar");
+				if (avatar) {
+					$("#img-avatar").attr("src", avatar);
+				} else {
+					// Set the default picture path
+					var defaultAvatar = "../images/index/user.jpg";
+					$("#img-avatar").attr("src", defaultAvatar);
+				}
+
+
+
+			});
+
+			$("#btn-change-avatar").click(function() {
+				$.ajax({
+					url: "/users/change_avatar",
+					type: "POST",
+					data: new FormData($("#form-change-avatar")[0]),
+					dataType: "JSON",
+					processData: false,
+					contentType: false,
+					success: function(json) {
+						if (json.state == 200) {
+							$("#img-avatar").attr("src", json.data);
+							$.cookie("avatar", json.data, {expires: 7});
+							alert("Change succeed! " + json.message);
+						} else {
+							alert("Change Failed! " + json.message);
+						}
+					},
+					error: function(xhr) {
+						alert("Your login information has expired, please log in again! HTTP Response Code:" + xhr.status);
+						location.href = "login.html";
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+/*Inner padding of the header*/
+.header {
+padding: 20px 60px;
+}
+/* top options overall */
+.top-item a {
+color: #777777;
+line-height: 40px;
+}
+/* li width of the top option */
+.top-item li {
+width: 100px;
+text-align: center;
+}
+/*top option vertical bar | width*/
+.top-item .li-split {
+width: 10px;
+}
+/* search text box width */
+#search {
+width: 300px;
+}
+/*top navigation bar*/
+.top-nav {
+background-color: #F2F2F2;
+height: 50px;
+padding-top: 6px;
+margin-bottom: 20px;
+}
+/*Manage drop-down box style*/
+#top-dropdown-btn {
+color: #777777;
+}
+/*Manage drop-down box li*/
+.top-dropdown-ul li {
+width: 100%;
+}

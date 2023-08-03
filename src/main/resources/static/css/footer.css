@@ -1,0 +1,123 @@
+/* icon increase color */
+ .rights.fa {
+ font-size: 30px;
+ color: #667799;
+ }
+ /* picture small spacing */
+ img {
+ margin: 2px;
+ }
+ /*Hyperlink style*/
+ .callus a {
+ font-size: 10px;
+ text-decoration: none;
+ color: #666666;
+ }
+ /* bottom padding height */
+ .bottom {
+ margin: 30px;
+ }
+ /* the color and padding of the entire row of rights */
+ .rights {
+ width: 100%;
+ padding: 50px;
+ background-color: #F2F2F2;
+ }
+ /*The filling of the entire line of Contact Us*/
+ .beforeBottom {
+ padding-top: 30px;
+ }
+
+
+
+
+
+ .section-title {
+     color: #333;
+     font-weight: bold;
+     font-size: 22px;
+     margin-bottom: 10px;
+ }
+
+ .section-content {
+     color: #666;
+     font-size: 16px;
+     text-align: justify;
+ }
+
+ .container{
+     margin-top: 30px;
+     margin-bottom: 80px;
+ }
+
+
+
+
+
+
+
+
+ .singleline{
+     font-size: 15px;
+     font-weight: bolder;
+     color: #357ebd;
+     line-height: 30px;
+ }
+
+li.singleline a:hover {
+    cursor: pointer; /* Change the cursor to a hand icon */
+    transform: scale(1.05); /* Increase the size by 5% */
+    transition: transform 0.3s ease-in-out; /* Animate the transformation */
+    text-decoration: underline;
+}
+
+
+.beforeBottom > div:nth-child(1) li.singleline a,
+.beforeBottom > div:nth-child(1) li.singleline a:hover,
+.beforeBottom > div:nth-child(2) li.singleline a,
+.beforeBottom > div:nth-child(2) li.singleline a:hover,
+.beforeBottom > div:nth-child(3) li.singleline a,
+.beforeBottom > div:nth-child(3) li.singleline a:hover {
+    font-size: 15px;
+    font-weight: bolder;
+    color: #357ebd;
+    line-height: 30px;
+}
+
+
+/*.footer .fa{
+    font-size: 50px;
+    font-weight: bolder;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: black;
+}*/
+
+.footer .fa {
+    font-size: 50px;
+    color: #333333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease-in-out;
+}
+
+.footer .fa:hover {
+    color: #666666;
+}
+
+.footer p{
+    font-size: 15px;
+    font-weight: bolder;
+    color: #357ebd;
+    line-height: 30px;
+    margin-top:20px;
+}
+
+.beforeBottom p.singleline{
+    font-size: 15px;
+    font-weight: bolder;
+    color: #357ebd;
+    line-height: 30px;
+    margin-top:0px;
+
+}

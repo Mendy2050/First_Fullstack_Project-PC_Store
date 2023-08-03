@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- 页面meta -->
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>User Management - Admin</title>
+
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+
+    <!-- Import Style -->
+
+    <link rel="stylesheet" href="../plugins/elementui/index.css">
+
+
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <!-- import the core file-->
+    <script src="../bootstrap3/js/holder.js"></script>
+    <link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="../bootstrap3/jquery-1.8.3.min.js"></script>
+    <script src="../bootstrap3/js/bootstrap.js"></script>
+    <script src="../js/menu.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Font icon -->
+    <link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/webindex.css" />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/top.css" />
+
+</head>
+<!--header-->
+<header class="header">
+    <!-- computer mall logo-->
+    <div class="row">
+        <div class="col-md-3">
+            <a href="index.html">
+                <img src="../images/index/stumalllogo.png" width="35%" height="35%"/>
+            </a>
+        </div>
+        <!--Quick options-->
+        <div class="col-md-9 top-item">
+            <ul class="list-inline pull-right">
+                <!--<li><a href="favorites.html"><span class="fa fa-heart"></span>&nbsp;Favorites</a></li>
+                <li class="li-split">|</li>-->
+                <li><a href="orders.html"><span class="fa fa-file-text"></span>&nbsp;Orders</a></li>
+                <li class="li-split">|</li>
+                <li><a href="cart.html"><span class="fa fa-cart-plus"></span>&nbsp;Cart</a></li>
+                <li class="li-split">|</li>
+                <li>
+                    <!--The following list button: Manage-->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                            <span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Manage <span class="caret"></span></span>
+                        </button>
+                        <ul class="dropdown-menu top-dropdown-ul" role="menu">
+                            <li><a href="password.html">Change Password</a></li>
+                            <li><a href="userdata.html">Personal Data</a></li>
+                            <li><a href="upload.html">Upload Avatar</a></li>
+                            <li><a href="address.html">Manage Delivery</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="li-split">|</li>
+                <li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Login</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--Navigation -->
+<!--Split navigation and top-->
+<div class="row top-nav">
+    <div class="col-md-6">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="#"></a>
+            </li>
+            <li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+            <li><a href="buyerAssistance.html">Buyer Assistance</a></li>
+            <li><a href="contactUs.html">Contact US</a></li>
+            <li><a href="merchantRegistration.html">Merchant Registration</a></li>
+            <li><a href="ourBrandStory.html">Brand Story</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <form action="search.html" class="form-inline pull-right" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+            </div>
+            <button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+        </form>
+    </div>
+</div>
+<!--end of head-->
+<!--End of navigation-->
+
+
+
+<body class="hold-transition" >
+
+<div id="app">
+
+    <div class="content-header" style="margin-top:50px; ">
+
+        <h1>User Management</h1>
+
+    </div>
+
+    <div class="app-container" style="margin-bottom:80px; ">
+
+        <div class="box">
+
+            <div class="filter-container">
+
+
+
+
+               <!-- <el-button @click="getAll()" class="dalfBut">Search</el-button>
+
+                <el-button type="primary" class="butT" @click="handleCreate()">Add</el-button>-->
+
+            </div>
+
+            <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
+
+                <el-table-column type="index" align="center" label="No."></el-table-column>
+
+                <el-table-column prop="username" label="Username" align="center"></el-table-column>
+
+                <el-table-column prop="phone" label="Phone" align="center"></el-table-column>
+
+                <el-table-column prop="email" label="Email" align="center"></el-table-column>
+
+                <el-table-column prop="gender" label="Gender" align="center"></el-table-column>
+
+
+                <el-table-column label="Operation" align="center">
+
+                    <template slot-scope="scope">
+
+<!--                        <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">Edit</el-button>-->
+
+                        <el-button type="danger" size="mini" v-if="scope.row.isAdmin !== 1" @click="handleDelete(scope.row)">Delete</el-button>
+
+                    </template>
+
+                </el-table-column>
+
+
+            </el-table>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--Start of footer-->
+<footer class="footer">
+    <!-- Quality Assurance, Customized Service, etc.-->
+    <div class="text-center rights container">
+        <div class="col-md-offset-2 col-md-2">
+            <span class="fa fa-thumbs-o-up"></span>
+            <p>Quality Assurance</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-address-card-o"></span>
+            <p>Customized Service</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-graduation-cap"></span>
+            <p>Student Exclusive Offer</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-bitcoin"></span>
+            <p>Exclusive Privileges</p>
+        </div>
+    </div>
+
+
+    <!--Contact US, Download App, etc.-->
+    <div class="container beforeBottom">
+        <div class="col-md-3 callus text-center">
+            <ul>
+                <li class="singleline"><a href="./buyerAssistance.html" >Buyer Assistance</a></li>
+                <li class="singleline"><a href="./beginnersGuide.html" >Beginner's Guide</a></li>
+                <li class="singleline"><a href="./serviceGuarantee.html">&nbsp;&nbsp;Service Guarantee</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./merchantAssistance.html">Merchant Assistance</a></li>
+                <li class="singleline"><a href="./merchantRegistration.html">Merchant Registration</a></li>
+                <li class="singleline"><a href="./faq.html" >FAQ</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./ourBrandStory.html" >Our Brand Story</a></li>
+                <li class="singleline"><a href="./helpCenter.html" >Help Center 24 Hours</a></li>
+                <li class="singleline"><a href="./contactUs.html" >Contact Us 24 Hours</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <p class="singleline">PC Store Client</p>
+            <img src="../images/index/ios.png" class="lf">
+            <img src="../images/index/android.png" alt="" class="lf"/>
+        </div>
+    </div>
+
+
+
+    <!-- Bottom of the page - record number #footer -->
+    <div class="col-md-12 text-center bottom">
+        Copyright © 2022 dnsc.cn All Rights Reserved Beijing ICP No. 08963888-45 Mendy Technology Group
+        Co., Ltd.  All rights reserved
+    </div>
+</footer>
+<!--End of footer-->
+
+</body>
+
+<!-- Import Component Library -->
+
+<script src="../js/vue.js"></script>
+
+<script src="../plugins/elementui/index.js"></script>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+
+<script src="../js/axios-0.18.0.js"></script>
+<script src="https://unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+
+<script>
+    ELEMENT.locale(ELEMENT.lang.en)
+
+    var vue = new Vue({
+
+        el: '#app',
+        data:{
+            pagination: {},
+            dataList: [], // The list data to be displayed on the current page
+            formData: {}, // Form data
+            dialogFormVisible: false,// Control whether the form is visible
+            dialogFormVisible4Edit:false,// edit whether the form is visible
+            rules: {// Validation rules
+                type: [{ required: true, message: 'User type is a required field', trigger: 'blur' }],
+                name: [{ required: true, message: 'User type is a required field', trigger: 'blur' }]
+            }
+        },
+
+        // Hook function, automatically executed after the VUE object is initialized
+        created() {
+            this.getAll();
+        },
+
+        methods: {
+            // List
+            getAll() {
+                // send out ajax request
+                axios.get("/admin").then( (res)=>{
+                    this.dataList = res.data.data;
+                });
+
+            },
+
+
+            resetForm() {
+                this.formData = {};
+            },
+
+
+            // Delete
+            handleDelete(row) {
+                //1. Pop up the notice dialog
+                this.$confirm("This operation will permanently delete the current data. Do you wish to continue?","Notice",{
+                    type:'info'
+                }).then(()=>{
+                    //2. operate delete
+                    //search data, search based on id
+                    axios.delete("/admin/" + row.uid).then((res)=>{
+                        //if search succeeded, show the popup, load data in the popup
+                        if(res.data.state == 20021){
+                            this.$message.success("delete successfully")
+                        }else{
+                            this.$message.error("delete failed")
+                        }
+                    }).finally(()=>{
+                        // call getAll to show the complete result
+                        this.getAll();
+                    });
+
+                }).catch(()=>{
+                    //3. when showing the confirm dialog of delete, it needs to have the function of cancel delete
+                    this.$message.info("cancel delete")
+                });
+
+            }
+        }
+    })
+
+</script>
+
+</html>

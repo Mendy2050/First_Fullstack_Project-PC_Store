@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.cy.store.mapper.DistrictMapper">
+
+    <!-- Get all provinces, all cities in a province, and all districts in a city: List<District> findByParent(String parent) -->
+    <select id="findByParent" resultType="com.cy.store.entity.District">
+        SELECT
+            *
+        FROM
+            store.t_dict_district
+        WHERE
+            parent=#{parent}
+        ORDER BY
+            code ASC
+    </select>
+
+
+
+    <!-- Obtain the name of the province, city, and district according to the administrative code of the province, city, and district: String
+    findNameByCode(String code) -->
+    <select id="findNameByCode" resultType="java.lang.String">
+        SELECT
+            name
+        FROM
+            store.t_dict_district
+        WHERE
+            code=#{code}
+    </select>
+</mapper>

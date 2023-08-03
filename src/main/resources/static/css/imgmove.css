@@ -1,0 +1,6 @@
+/*The default style of the image that will become larger*/
+.move-img {
+background-size: 100%;
+background-position: center;
+background-repeat: no-repeat;
+}

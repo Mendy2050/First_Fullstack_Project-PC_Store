@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--edge browser H5 compatible settings-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--360 browser H5 compatible settings-->
+    <meta name="renderer" content="webkit"/>
+    <title>Computer Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import core file-->
+    <script src="../bootstrap3/js/holder.js"></script>
+    <link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+    <script src="../bootstrap3/js/bootstrap.js"></script>
+    <!-- font icon -->
+    <link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/top.css" />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/orderInfo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/order.css" />
+</head>
+<body>
+<!--head-->
+<header class="header">
+    <!--Computer store logo-->
+    <div class="row">
+        <div class="col-md-3">
+            <a href="index.html">
+                <img src="../images/index/stumalllogo.png" width="35%" height="35%"/>
+            </a>
+        </div>
+        <!--Shortcut Options-->
+        <div class="col-md-9 top-item">
+            <ul class="list-inline pull-right">
+                <!--<li><a href="favorites.html"><span class="fa fa-heart"></span> Favorites</a></li>
+                <li class="li-split">|</li>-->
+                <li><a href="orders.html"><span class="fa fa-file-text"></span> Orders</a></li>
+                <li class="li-split">|
+                <li><a href="cart.html"><span class="fa fa-cart-plus"></span> Cart</a></li>
+                <li class="li-split">|</li>
+                <li>
+                    <!--List button: Manage-->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                            <span id="top-dropdown-btn"><span class="fa fa-gears"></span> Manage <span class="caret"></span></span>
+                        </button>
+                        <ul class="dropdown-menu top-dropdown-ul" role="menu">
+                            <li><a href="password.html">Change Password</a></li>
+                            <li><a href="userdata.html">Personal Data</a></li>
+                            <li><a href="upload.html">Upload Avatar</a></li>
+                            <li><a href="address.html">Manage Delivery</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="li-split">|</li>
+                <li><a href="login.html"><span class="fa fa-user"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--Navigation -->
+<!--Split navigation and top-->
+<div class="row top-nav">
+    <div class="col-md-6">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="#"></a>
+            </li>
+            <li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+            <li><a href="buyerAssistance.html">Buyer Assistance</a></li>
+            <li><a href="contactUs.html">Contact US</a></li>
+            <li><a href="merchantRegistration.html">Merchant Registration</a></li>
+            <li><a href="ourBrandStory.html">Brand Story</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <form action="search.html" class="form-inline pull-right" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+            </div>
+            <button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+        </form>
+    </div>
+</div>
+<!--end of head-->
+<!--End of navigation-->
+
+<!--The page body begins-->
+<div class="container">
+    <div class="col-md-offset-1 col-md-10">
+        <h1>Order details:</h1>
+        <h2 class="page-header">Status Information:</h2>
+        <div class="state-bar">
+            Order Number: 1101000301, Current Status: waiting for delivery
+        </div>
+        <ol class="order-flow">
+            <li class="order-success">1. Submit Order<small>2018-12-2 20:32:17</small> <span class="fa fa-check-circle"></span></li>
+            <li class="order-success">2. Payment Successful<small>2018-12-2 20:35:03</small> <span class="fa fa-check-circle"></span></li>
+            <li class="order-success">3. Mall Delivery<small>2018-12-3 08:13:34</small> <span class="fa fa-check-circle"></span></li>
+            <li>4. User receives goods</li>
+            <li>5. Shopping evaluation</li>
+        </ol>
+        <h2 class="page-header">Address Details:</h2>
+        <p>Consignee Name: Bajie, zip code: 100190, contact number: 1380***1234</p>
+        <p>Receipt Address: No. 6, Row 3, Gaolaozhuang, Fangshan District, Beijing</p>
+        <h2 class="page-header">Logistics Information:</h2>
+        <p>Delivery Time: 2018-12-3 08:13:34</p>
+        <p>Logistics Company: SF Express</p>
+        <p>Express Number: 301111303203048</p>
+        <p>Logistics Information:</p>
+        <p>2018-12-3 08:13:34 Your courier has been sorted at [Beijing International Trade Sorting Center]</p>
+        <p>2018-12-3 08:39:50 Your courier is ready for loading at [Beijing International Trade Sorting Center]</p>
+        <p>2018-12-3 12:20:07 Your courier arrived at [Beijing Zhongguancun Sorting Center]</p>
+        <h2 class="page-header">Product Details:</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Order number: 1101000301, order time: 2018-12-2 20:32:17, consignee: Bajie
+                </h3>
+            </div>
+            <div class="panel-body">
+                <table class="orders-table">
+                    <thead>
+                    <tr>
+                        <th width="15%"></th>
+                   <th width="35%">Commodity</th>
+                        <th width="15%">Unit Price</th>
+                        <th width="15%">Quantity</th>
+                        <th width="20%">Subtotal</th>
+                    </tr>
+                    </thead>
+                    <tbody class="orders-body">
+                    <tr>
+                        <td><img src="../images/portal/12DELLXPS13-silvery/collect.png" class="img-responsive"/></td>
+                        <td>Lenovo Xiaoxin Air13 Pro 13.3-inch 14.8mm ultra-thin laptop</td>
+                        <td>€<span>5298</span></td>
+                        <td>1 Item</td>
+                        <td>€<span>5298</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <span class="pull-right">Total order amount: €5298</span>
+                </div>
+            </div>
+        </div>
+        <a href="orders.html">Back</a>
+    </div>
+</div>
+
+<!--Start of footer-->
+<footer class="footer">
+    <!-- Quality Assurance, Customized Service, etc.-->
+    <div class="text-center rights container">
+        <div class="col-md-offset-2 col-md-2">
+            <span class="fa fa-thumbs-o-up"></span>
+            <p>Quality Assurance</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-address-card-o"></span>
+            <p>Customized Service</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-graduation-cap"></span>
+            <p>Student Exclusive Offer</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-bitcoin"></span>
+            <p>Exclusive Privileges</p>
+        </div>
+    </div>
+
+
+    <!--Contact US, Download App, etc.-->
+    <div class="container beforeBottom">
+        <div class="col-md-3 callus text-center">
+            <ul>
+                <li class="singleline"><a href="./buyerAssistance.html" >Buyer Assistance</a></li>
+                <li class="singleline"><a href="./beginnersGuide.html" >Beginner's Guide</a></li>
+                <li class="singleline"><a href="./serviceGuarantee.html">&nbsp;&nbsp;Service Guarantee</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./merchantAssistance.html">Merchant Assistance</a></li>
+                <li class="singleline"><a href="./merchantRegistration.html">Merchant Registration</a></li>
+                <li class="singleline"><a href="./faq.html" >FAQ</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./ourBrandStory.html" >Our Brand Story</a></li>
+                <li class="singleline"><a href="./helpCenter.html" >Help Center 24 Hours</a></li>
+                <li class="singleline"><a href="./contactUs.html" >Contact Us 24 Hours</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <p class="singleline">PC Store Client</p>
+            <img src="../images/index/ios.png" class="lf">
+            <img src="../images/index/android.png" alt="" class="lf"/>
+        </div>
+    </div>
+
+
+
+    <!-- Bottom of the page - record number #footer -->
+    <div class="col-md-12 text-center bottom">
+        Copyright © 2022 dnsc.cn All Rights Reserved Beijing ICP No. 08963888-45 Mendy Technology Group
+        Co., Ltd.  All rights reserved
+    </div>
+</footer>
+<!--End of footer-->
+
+</body>
+
+</html>

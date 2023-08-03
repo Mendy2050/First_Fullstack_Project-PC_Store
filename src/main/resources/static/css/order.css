@@ -1,0 +1,17 @@
+/*Form text centered*/
+.orders-table {
+text-align: center;
+}
+/* Header text is centered */
+.orders-table th {
+text-align: center;
+}
+/*Quantity numbers are centered*/
+.orders-table input {
+text-align: center;
+}
+/* space between each row */
+.orders-table tbody tr {
+border-top: 1px dashed #cccccc;
+}
+

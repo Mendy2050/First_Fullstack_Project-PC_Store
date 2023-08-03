@@ -1,0 +1,65 @@
+/* Product big picture style */
+.img-big {
+width: 100%;
+display: none;
+border: 2px solid #aaaaaa;
+border-radius: 3px;
+margin: 0;
+padding: 0;
+}
+/*Style for small product images*/
+.img-small {
+border: 1px solid #dddddd;
+margin: 5px;
+padding: 1px;
+cursor: pointer;
+}
+/* The initial situation of the large picture only shows one, the visible style */
+.big-show {
+display: block;
+}
+/*The small font style of the price box*/
+.price-bar small {
+font-size: 14px;
+}
+/* the style of the price box */
+.price-bar {
+background: #f0f9ff;
+color: #092f97;
+padding: 8px;
+border: 3px solid #699fd7;
+border-radius: 3px;
+font-size: 30px;
+margin: 5px;
+}
+/* Purchase form interval */
+.product-form {
+margin: 10px 0;
+}
+/*Interval between form lines*/
+.form-space {
+margin: 10px 0;
+}
+/*Aftermarket icons*/
+.sale-icon {
+color: #092F97;
+font-size: 25px;
+}
+/* post-sale title */
+.sale-title {
+color: #092F97;
+font-size: 18px;
+}
+/*After-sale content*/
+.sale-content {
+color: #999999;
+font-size: 12px;
+padding-bottom: 40px;
+}
+/*quantity button style*/
+.num-btn {
+width: 30px;
+}
+.num-text {
+text-align: center;
+}

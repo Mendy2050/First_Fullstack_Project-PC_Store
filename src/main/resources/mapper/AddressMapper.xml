@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.store.mapper.AddressMapper">
+    <resultMap id="AddressEntityMap" type="com.cy.store.entity.Address">
+        <id column="aid" property="aid"/>
+        <result column="country_name" property="countryName"/>
+        <result column="cityOrCounty_name" property="cityOrCountyName"/>
+        <result column="is_default" property="isDefault"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="modified_user" property="modifiedUser"/>
+        <result column="modified_time" property="modifiedTime"/>
+    </resultMap>
+
+
+
+
+    <!-- insert shipping address data: Integer insert(Address address) -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="aid">
+        INSERT INTO store.t_address (
+            uid, name, country_name, cityOrCounty_name, zip,
+            address, phone, tel, tag, is_default, created_user, created_time, modified_user, modified_time
+        ) VALUES (
+            #{uid}, #{name}, #{countryName},  #{cityOrCountyName},#{zip},
+            #{address}, #{phone}, #{tel}, #{tag}, #{isDefault}, #{createdUser},
+            #{createdTime}, #{modifiedUser}, #{modifiedTime}
+        )
+    </insert>
+
+
+
+
+    <!-- Count the amount of delivery address data of a user: Integer countByUid(Integer uid) -->
+    <select id="countByUid" resultType="java.lang.Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            store.t_address
+        WHERE
+            uid=#{uid}
+    </select>
+
+
+
+
+    <!-- Query the shipping address list data of a user: List<Address> findByUid(Integer uid) -->
+    <select id="findByUid" resultMap="AddressEntityMap">
+        SELECT
+            *
+        FROM
+            store.t_address
+        WHERE
+            uid=#{uid}
+        ORDER BY
+            is_default DESC, created_time DESC
+    </select>
+
+
+
+
+    <!-- set all shipping addresses for a user to non-default addresses: Integer updateNonDefaultByUid(Integer uid) -->
+    <update id="updateNonDefaultByUid">
+        UPDATE
+            store.t_address
+        SET
+            is_default=0
+        WHERE
+            uid=#{uid}
+    </update>
+
+
+
+
+
+    <!-- Set the specified shipping address as the default address:
+         Integer updateDefaultByAid(
+            @Param("aid") Integer aid,
+            @Param("modifiedUser") String modifiedUser,
+            @Param("modifiedTime") Date modifiedTime) -->
+    <update id="updateDefaultByAid">
+        UPDATE
+            store.t_address
+        SET
+            is_default=1,
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        WHERE
+            aid=#{aid}
+    </update>
+
+
+
+
+
+    <!-- According to the aid value of the delivery address, query the details of the delivery address: Address findByAid(Integer aid) -->
+    <select id="findByAid" resultMap="AddressEntityMap">
+        SELECT
+            *
+        FROM
+            store.t_address
+        WHERE
+            aid=#{aid}
+    </select>
+
+
+
+
+
+    <!-- Delete data based on shipping address ID: Integer deleteByAid(Integer aid) -->
+    <delete id="deleteByAid">
+        DELETE FROM
+            store.t_address
+        WHERE
+            aid=#{aid}
+    </delete>
+
+
+
+
+
+    <!-- Query the last modified delivery address of a user: Address findLastModified(Integer uid) -->
+    <select id="findLastModified" resultMap="AddressEntityMap">
+        SELECT
+            *
+        FROM
+            store.t_address
+        WHERE
+            uid=#{uid}
+        ORDER BY
+            modified_time DESC
+            LIMIT 0,1
+    </select>
+
+</mapper>

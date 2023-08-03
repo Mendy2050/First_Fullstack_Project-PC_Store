@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--edge browser H5 compatible settings-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--360 browser H5 compatible settings-->
+    <meta name="renderer" content="webkit"/>
+    <title>Computer Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import core file-->
+    <script src="../bootstrap3/js/holder.js"></script>
+    <link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+    <script src="../bootstrap3/js/bootstrap.js"></script>
+    <!-- font icon -->
+    <link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/top.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/order.css"/>
+</head>
+<body>
+<!--head-->
+<header class="header">
+    <!--Computer store logo-->
+    <div class="row">
+        <div class="col-md-3">
+            <a href="index.html">
+                <img src="../images/index/stumalllogo.png" width="35%" height="35%"/>
+            </a>
+        </div>
+        <!--Shortcut Options-->
+        <div class="col-md-9 top-item">
+            <ul class="list-inline pull-right">
+                <!--<li><a href="favorites.html"><span class="fa fa-heart"></span> Favorites</a></li>
+                <li class="li-split">|</li>-->
+                <li><a href="orders.html"><span class="fa fa-file-text"></span> Orders</a></li>
+                <li class="li-split">|
+                <li><a href="cart.html"><span class="fa fa-cart-plus"></span> Cart</a></li>
+                <li class="li-split">|</li>
+                <li>
+                    <!--List button: Manage-->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                            <span id="top-dropdown-btn"><span class="fa fa-gears"></span> Manage <span class="caret"></span></span>
+                        </button>
+                        <ul class="dropdown-menu top-dropdown-ul" role="menu">
+                            <li><a href="password.html">Change Password</a></li>
+                            <li><a href="userdata.html">Personal Data</a></li>
+                            <li><a href="upload.html">Upload Avatar</a></li>
+                            <li><a href="address.html">Manage Delivery</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="li-split">|</li>
+                <li><a href="login.html"><span class="fa fa-user"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--Navigation -->
+<!--Split navigation and top-->
+<div class="row top-nav">
+    <div class="col-md-6">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="#"></a>
+            </li>
+            <li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+            <li><a href="buyerAssistance.html">Buyer Assistance</a></li>
+            <li><a href="contactUs.html">Contact US</a></li>
+            <li><a href="merchantRegistration.html">Merchant Registration</a></li>
+            <li><a href="ourBrandStory.html">Brand Story</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <form action="search.html" class="form-inline pull-right" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+            </div>
+            <button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+        </form>
+    </div>
+</div>
+<!--end of head-->
+<!--End of navigation-->
+
+
+<div class="container">
+    <div class="col-md-2">
+        <!--Left navigation start-->
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <!--Main option: My Orders-->
+                    <p class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">My Orders</a>
+                    </p>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div><a href="orders.html"><b>All Orders</b></a></div>
+                        <div><a href="orders.html">Payment Pending</a></div>
+                        <div><a href="orders.html">Pending Delivery</a></div>
+                        <div><a href="orders.html">Pending Review</a></div>
+                        <div><a href="orders.html">Return and Refund</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <!--Main option: data modification-->
+                    <p class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Data Modification</a>
+                    </p>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div><a href="password.html"><b>Change Password</b></a></div>
+                        <div><a href="userdata.html">Profile</a></div>
+                        <div><a href="upload.html">Upload Avatar</a></div>
+                        <div><a href="address.html">Receipt Management</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of left navigation-->
+
+
+    <div class="col-md-10" >
+        <div class="panel panel-default" id="ordersContainer">
+            <div class="panel-heading" >
+                <p class="panel-title" >
+                    Order number: 1101000001, order time: 2018-12-1 17:50:30, consignee: Bajie
+                </p>
+            </div>
+
+            <div class="panel-body">
+                <table class="orders-table" width="100%">
+                    <thead>
+                    <tr>
+                        <th width="15%"></th>
+                        <th width="30%">Commodity</th>
+                        <th width="8%">Unit Price</th>
+                        <th width="8%">Quantity</th>
+                        <th width="9%">Subtotal</th>
+                        <th width="10%">After Sales</th>
+                        <th width="10%">Status</th>
+                        <th width="10%">Operation</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="cart-list" class="orders-body">
+                    <tr>
+                        <td><img src="../images/portal/12DELLXPS13-silvery/collect.png" class="img-responsive"/></td>
+                        <td>Lenovo Xiaoxin Air13 Pro 13.3-inch 14.8mm ultra-thin laptop</td>
+                        <td>€<span>5298</span></td>
+                        <td>1 item</td>
+                        <td>€<span>5298</span></td>
+                        <td><a href="#">Apply for After-sales Service</a></td>
+                        <td>
+                            <div>Shipped</div>
+                            <div><a href="orderInfo.html">Order Details</a></div>
+                        </td>
+                        <td><a href="#" class="btn btn-default btn-xs">Confirm Receipt</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="../images/portal/16LenovoYOGA900green/collect.png" class="img-responsive"/></td>
+                        <td>DELL XPS13-9360-R1609 13.3</td>
+                        <td>€<span>4696</span></td>
+                        <td>2 items</td>
+                        <td>€<span>9392</span></td>
+                        <td><a href="#">Apply for After-sales Service</a></td>
+                        <td>
+                            <div>Shipped</div>
+                            <div><a href="orderInfo.html">Order Details</a></div>
+                        </td>
+                        <td><a href="#" class="btn btn-default btn-xs">Confirm Receipt</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="../images/portal/13LenovoIdeaPad310_silvery/collect.png" class="img-responsive"/></td>
+                        <td>DELL Rubik's Cube 15MF Pro-R2505TSS Inspiron</td>
+                        <td>€<span>5999</span></td>
+                        <td>1 item</td>
+                        <td>€<span>5999</span></td>
+                        <td><a href="#">Apply for After-sales Service</a></td>
+                        <td>
+                            <div>Shipped</div>
+                            <div><a href="orderInfo.html">Order Details</a></div>
+                        </td>
+                        <td><a href="#" class="btn btn-default btn-xs">Confirm Receipt</a></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+
+                <div>
+                    <span class="pull-right" id="all-price">Total Order Amount: €20689</span>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <!--<div class="panel panel-default">
+            <div class="panel-heading">
+                <p class="panel-title">
+                    Order number: 1101000301, order time: 2018-12-2 20:32:17, consignee: Bajie
+                </p>
+            </div>
+
+            <div class="panel-body">
+                <table class="orders-table" width="100%">
+                    <thead>
+                    <tr>
+                        <th width="15%"></th>
+                        <th width="30%">Commodity</th>
+                        <th width="8%">Unit Price</th>
+                        <th width="8%">Quantity</th>
+                        <th width="9%">Subtotal</th>
+                        <th width="10%">After Sales</th>
+                        <th width="10%">Status</th>
+                        <th width="10%">Operation</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="orders-body">
+                    <tr>
+                        <td><img src="../images/portal/12DELLXPS13-silvery/collect.png" class="img-responsive"/></td>
+                        <td>Lenovo Xiaoxin Air13 Pro 13.3-inch 14.8mm ultra-thin laptop</td>
+                        <td>€<span>5298</span></td>
+                        <td>1 item</td>
+                        <td>€<span>5298</span></td>
+                        <td><a href="#">Apply for After-sales Service</a></td>
+                        <td>
+                            <div>Shipped</div>
+                            <div><a href="orderInfo.html">Order Details</a></div>
+                        </td>
+                        <td><a href="#" class="btn btn-default btn-xs">Confirm Receipt</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <span class="pull-right">Total Order Amount: €5298</span>
+                </div>
+            </div>
+        </div>-->
+
+
+    </div>
+</div>
+
+<!--Start of footer-->
+<footer class="footer">
+    <!-- Quality Assurance, Customized Service, etc.-->
+    <div class="text-center rights container">
+        <div class="col-md-offset-2 col-md-2">
+            <span class="fa fa-thumbs-o-up"></span>
+            <p>Quality Assurance</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-address-card-o"></span>
+            <p>Customized Service</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-graduation-cap"></span>
+            <p>Student Exclusive Offer</p>
+        </div>
+        <div class="col-md-2">
+            <span class="fa fa-bitcoin"></span>
+            <p>Exclusive Privileges</p>
+        </div>
+    </div>
+
+
+    <!--Contact US, Download App, etc.-->
+    <div class="container beforeBottom">
+        <div class="col-md-3 callus text-center">
+            <ul>
+                <li class="singleline"><a href="./buyerAssistance.html">Buyer Assistance</a></li>
+                <li class="singleline"><a href="./beginnersGuide.html">Beginner's Guide</a></li>
+                <li class="singleline"><a href="./serviceGuarantee.html">&nbsp;&nbsp;Service Guarantee</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./merchantAssistance.html">Merchant Assistance</a></li>
+                <li class="singleline"><a href="./merchantRegistration.html">Merchant Registration</a></li>
+                <li class="singleline"><a href="./faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul>
+                <li class="singleline"><a href="./ourBrandStory.html">Our Brand Story</a></li>
+                <li class="singleline"><a href="./helpCenter.html">Help Center 24 Hours</a></li>
+                <li class="singleline"><a href="./contactUs.html">Contact Us 24 Hours</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <p class="singleline">PC Store Client</p>
+            <img src="../images/index/ios.png" class="lf">
+            <img src="../images/index/android.png" alt="" class="lf"/>
+        </div>
+    </div>
+
+
+    <!-- Bottom of the page - record number #footer -->
+    <div class="col-md-12 text-center bottom">
+        Copyright © 2022 dnsc.cn All Rights Reserved Beijing ICP No. 08963888-45 Mendy Technology Group
+        Co., Ltd. All rights reserved
+    </div>
+</footer>
+<!--End of footer-->
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#ordersContainer').empty();
+
+        $.ajax({
+            url: '/orders/details',
+            type: "GET",
+            dataType: "JSON",
+            success: function (json) {
+                let orderLists = json.data;
+
+                for (let i = 0; i < orderLists.length; i++) {
+
+                    let totalOrderAmount = 0;
+
+                    let orderHTML = "";
+
+                    let firstOrder = orderLists[i][0];
+
+                    let headerTemplate =
+                        '<div class="panel-heading">\n' +
+                        '<p class="panel-title" >\n' +
+                        'Order number: #{oid}, order time: #{createdTime}, consignee: #{createdUser}\n' +
+                        '</p>\n' +
+                        '</div>\n' +
+                        '\n' +
+                        '<div class="panel-body">\n' +
+                        '<table class="orders-table" width="100%">\n' +
+                        '<thead>\n' +
+                        '<tr>\n' +
+                        '<th width="15%"></th>\n' +
+                        '<th width="40%">Commodity</th>\n' +
+                        '<th width="8%">Unit Price</th>\n' +
+                        '<th width="8%">Quantity</th>\n' +
+                        '<th width="9%">Subtotal</th>\n' +
+                        '<th width="12%">After Sales</th>\n' +
+                        '</tr>\n' +
+                        '</thead>\n' +
+                        '\n' +
+                        '<tbody id="cart-list" class="orders-body">';
+
+                    headerTemplate = headerTemplate.replace(/#{oid}/g, firstOrder.oid);
+                    headerTemplate = headerTemplate.replace(/#{createdTime}/g, firstOrder.createdTime);
+                    headerTemplate = headerTemplate.replace(/#{createdUser}/g, firstOrder.createdUser);
+
+                    orderHTML += headerTemplate;
+
+                    for(let j = 0; j < orderLists[i].length; j++) {
+                        let order = orderLists[i][j];
+                        let tr = '<tr>\n' +
+                            '<td><img src="..#{image}collect.png" class="img-responsive"/></td>\n' +
+                            '<td>#{title}</td>\n' +
+                            '<td>€<span>#{price}</span></td>\n' +
+                            '<td>#{num} item</td>\n' +
+                            '<td>€<span>#{subtotal}</span></td>\n' +
+                            '<td><a href="contactUs.html">Apply for After-sales Service</a></td>\n' +
+                            '</tr>' ;
+
+                        tr = tr.replace(/#{image}/g, order.image);
+                        tr = tr.replace(/#{title}/g, order.title);
+                        tr = tr.replace(/#{price}/g, order.price);
+                        tr = tr.replace(/#{num}/g, order.num);
+                        tr = tr.replace(/#{subtotal}/g, order.price * order.num);
+
+                        orderHTML += tr;
+
+                        totalOrderAmount += order.price * order.num;
+
+                    }
+
+                    orderHTML += '</tbody></table>';
+                    orderHTML += '<div>\n' +
+                        '<span class="pull-right" id="all-price">Total Order Amount: <strong>€' + totalOrderAmount + '</strong></span>\n' +
+                        '</div>';
+
+
+                    orderHTML += '<div style="height: 40px;"></div>';
+                    $("#ordersContainer").append(orderHTML);
+
+
+                }
+            },
+            error: function(error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+
+    });
+
+
+
+</script>
+
+</body>
+
+</html>
